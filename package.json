@@ -1,24 +1,33 @@
 {
-  "name": "assignment-backend",
-  "version": "1.0.0",
-  "description": "API with Node.js, Express and MONGODB",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Shubham",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.4.0",
-    "body-parser": "^1.20.2",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongodb": "^5.7.0",
-    "mongoose": "^7.4.2",
-    "nodemon": "^3.0.1",
-    "query-string": "^8.1.0"
+   "name": "assignment-backend",
+   "version": "1.0.0",
+   "description": "",
+   "scripts": {
+       "build": "echo \"No build specified\" && exit 1",
+       "test": "echo \"No test specified\" && exit 1",
+       "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shubh1610/assignment-backend.git"
+    },
+    "author": "Shubham Kumari",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/shubh1610/assignment-backend/issues"
+    },
+    "homepage": "https://github.com/shubh1610/assignment-backend#readme",
+    "dependencies": {
+      "axios": "^1.4.0",
+      "body-parser": "^1.20.2",
+      "cookie-parser": "^1.4.6",
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "jsonwebtoken": "^9.0.0",
+      "mongodb": "^5.7.0",
+      "mongoose": "^7.4.2",
+      "nodemon": "^3.0.1",
+      "query-string": "^8.1.0"
+    }
   }
-}
