@@ -4,8 +4,6 @@ const addComment = async (req,res) => {
     try{
         const {blogComment, author, blogId, authorName} = req.body;
 
-        console.log(req.body,"req.body")
-
         const newComment = new Comments({
             BlogId: blogId,
             Comment: blogComment,

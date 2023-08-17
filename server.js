@@ -5,7 +5,7 @@ const axios =require('axios');
 require("dotenv").config();
 
 const app = express();
-app.use(cors({origin:true, credentials:true}));
+app.use(cors());
 
 
 const  queryString =require('querystring');

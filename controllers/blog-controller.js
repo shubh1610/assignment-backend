@@ -37,7 +37,6 @@ const getBlogs= async (req,res)=>{
 
 const getBlogsById= async (req,res)=>{
     const {user}=req.query
-    console.log( user);
 
     try{
         const blogs= await Blogs.find({"UserId":user})

@@ -1,7 +1,6 @@
 const Users = require("../models/Users");
 
 const signup = async (req,res) => {
-    console.log(req.body, 'Body');
     try{
         const {userName, password, fullName} = req.body;
 
@@ -37,12 +36,10 @@ const signup = async (req,res) => {
 
 
 const login = async(req,res) => {
-    console.log(req.body)
     try{
         const {userName, password } = req.body;
 
         const user = await Users.findOne({ UserName: userName});
-        console.log(user, 'user');
         if(!user){
             return res.status(401).json({ message: "Invalid UserName or Password"});
         }
