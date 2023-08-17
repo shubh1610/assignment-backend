@@ -74,6 +74,7 @@ function getGoogleAuthURL() {
     redirect_uri:config.redirectUrl,
     client_id:config.clientId
   }
+  console.log(config.redirectUrl,"urrll");
   return `${rootUrl}?${queryString.stringify(options)}`;
 }
 
