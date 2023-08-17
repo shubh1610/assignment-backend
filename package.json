@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-express-mongodb",
+  "name": "assignment-backend",
   "version": "1.0.0",
   "description": "API with Node.js, Express and MONGODB",
   "main": "server.js",
