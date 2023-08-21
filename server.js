@@ -5,7 +5,7 @@ const axios =require('axios');
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+app.use(cors({origin:true,credentials:true}));
 
 
 const  queryString =require('querystring');
@@ -106,6 +106,7 @@ app.get('/auth/token', async (req, res) => {
   app.post('/auth/logged_in', (req, res) => {
     try {
       // Get token from cookie
+      console.log(req.body);
       const token = req.cookies.token;
       if (!token) {return res.json({ loggedIn: false })};
       const { user } = jwt.verify(token, config.tokenSecret);
