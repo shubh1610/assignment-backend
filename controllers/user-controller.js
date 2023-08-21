@@ -53,8 +53,8 @@ const login = async(req,res) => {
 
 
         const userData = {
-            userName: user.UserName,
-            fullName: user.FullName,
+            userName: user?.UserName,
+            fullName: user?.FullName,
         };
 
         res.status(200).json({message: "Login Successful", userData: userData});

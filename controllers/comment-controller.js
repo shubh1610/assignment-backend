@@ -16,9 +16,7 @@ const addComment = async (req,res) => {
         await newComment.save();
         const comments= await Comments.find({"BlogId":blogId})
         res.status(200).json(comments);
-        // res.status(200).json({
-        //     message: "Comment Added Successfully"
-        // });
+        
     }
 
     catch(err){
