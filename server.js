@@ -110,7 +110,7 @@ app.get('/auth/token', async (req, res) => {
     try {
       // Get token from cookie
       console.log(req.body);
-      const token = req.cookies.token;
+      const token = req.body.token;
       console.log('token', token);
       if (!token) {return res.json({ loggedIn: false })};
       const { user } = jwt.verify(token, config.tokenSecret);
