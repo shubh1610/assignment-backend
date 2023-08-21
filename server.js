@@ -13,7 +13,9 @@ const jwt =require( 'jsonwebtoken');
 const cookieParser =require( 'cookie-parser');
 app.use(cookieParser());
 app.use(cookieParser("secret"));
+app.use(bodyParser.json())
 
+app.use(bodyParser.urlencoded({ extended: true }))
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -128,9 +130,7 @@ app.get('/auth/token', async (req, res) => {
     res.json({ loggedIn: false });
   });
 
-app.use(bodyParser.json())
 
-app.use(bodyParser.urlencoded({ extended: true }))
 
 
 
