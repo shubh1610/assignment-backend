@@ -5,7 +5,7 @@ const axios =require('axios');
 require("dotenv").config();
 
 const app = express();
-app.use(cors({origin:true,credentials:true}));
+app.use(cors({origin:true, credentials:true}));
 
 
 const  queryString =require('querystring');
@@ -74,6 +74,7 @@ function getGoogleAuthURL() {
     redirect_uri:config.redirectUrl,
     client_id:config.clientId
   }
+  console.log(config.redirectUrl,"urrll");
   return `${rootUrl}?${queryString.stringify(options)}`;
 }
 
@@ -108,6 +109,7 @@ app.get('/auth/token', async (req, res) => {
       // Get token from cookie
       console.log(req.body);
       const token = req.cookies.token;
+      console.log('token', token);
       if (!token) {return res.json({ loggedIn: false })};
       const { user } = jwt.verify(token, config.tokenSecret);
       const newToken = jwt.sign({ user }, config.tokenSecret, { expiresIn: config.tokenExpiration });
