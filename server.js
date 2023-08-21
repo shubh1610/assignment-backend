@@ -108,7 +108,7 @@ app.get('/auth/token', async (req, res) => {
   app.post('/auth/logged_in', (req, res) => {
     try {
       // Get token from cookie
-      const token = req.body.token;
+      const token = req.body.token.token;
       if (!token) {return res.json({ loggedIn: false })};
       const { user } = jwt.verify(token, config.tokenSecret);
       const newToken = jwt.sign({ user }, config.tokenSecret, { expiresIn: config.tokenExpiration });
