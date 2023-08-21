@@ -76,7 +76,6 @@ function getGoogleAuthURL() {
     redirect_uri:config.redirectUrl,
     client_id:config.clientId
   }
-  console.log(config.redirectUrl,"urrll");
   return `${rootUrl}?${queryString.stringify(options)}`;
 }
 
@@ -109,9 +108,7 @@ app.get('/auth/token', async (req, res) => {
   app.post('/auth/logged_in', (req, res) => {
     try {
       // Get token from cookie
-      console.log(req.body);
-      const token = req.body.token.token;
-      console.log('token', token);
+      const token = req.body.token;
       if (!token) {return res.json({ loggedIn: false })};
       const { user } = jwt.verify(token, config.tokenSecret);
       const newToken = jwt.sign({ user }, config.tokenSecret, { expiresIn: config.tokenExpiration });
